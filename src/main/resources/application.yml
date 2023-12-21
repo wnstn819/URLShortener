@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    include: oauth
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url : jdbc:mysql://localhost:3306/trade?characterEncoding=UTF-8&serverTimezone=UTC
+    username : root
+    password : dhkd2303
+  jpa:
+    show-sql : true
+    database: mysql   # 추가 해준 부분
+    database-platform: org.hibernate.dialect.MySQL8Dialect # 추가 해준 부분
+    hibernate:
+      ddl-auto : update
+    properties:
+      hibernate:
+       format_sql : true
+  auth:
+    jwt:
+      secret_key: userTradeSecretKeyUserTradeSecretKeysUserTradeSecretKeyUserTradeSecretKeysuserTradeSecretKeyUserTradeSecretKeysUserTradeSecretKeyUserTradeSecretKeys
+      access_time: 1800000
+      refresh_time: 84000000
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#  main:
+#    allow-bean-definition-overriding : true
+#    allow-circular-references: true
